@@ -10,6 +10,7 @@
 #import "XMGAudioTool.h"
 #import "XMGMusicTool.h"
 #import "XMGAudioFileTool.h"
+#import "LameTool.h"
 
 @interface ViewController ()
 
@@ -19,7 +20,7 @@
 
 
 - (IBAction)beginRecord:(id)sender {
-    [[XMGAudioTool shareInstance] beginRecordWithRecordPath:@"/Users/zhangzhifu/Desktop/test2.m4a"];
+    [[XMGAudioTool shareInstance] beginRecordWithRecordPath:@"/Users/zhangzhifu/Desktop/test.caf"];
 }
 
 - (IBAction)endRecord:(id)sender {
@@ -38,7 +39,8 @@
 
 - (IBAction)export:(id)sender {
 //    [XMGAudioFileTool addAudioFile:@"/Users/zhangzhifu/Desktop/test.m4a" toAudioFile:@"/Users/zhangzhifu/Desktop/test2.m4a" savePath:@"/Users/zhangzhifu/Desktop/test3.m4a"];
-    [XMGAudioFileTool subAudioFile:@"/Users/zhangzhifu/Desktop/test.m4a" fromTime:1 toTime:2 savePath:@"/Users/zhangzhifu/Desktop/test4.m4a"];
+//    [XMGAudioFileTool subAudioFile:@"/Users/zhangzhifu/Desktop/test.m4a" fromTime:1 toTime:2 savePath:@"/Users/zhangzhifu/Desktop/test4.m4a"];
+    [LameTool audioToMP3:@"/Users/zhangzhifu/Desktop/test.caf" isDeleteSourchFile:NO];
 }
 
 @end

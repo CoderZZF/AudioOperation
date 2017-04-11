@@ -54,9 +54,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVf-ea-b08">
-                                <rect key="frame" x="173" y="318" width="31" height="30"/>
+                                <rect key="frame" x="158" y="318" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="导出"/>
+                                <state key="normal" title="压缩转码"/>
                                 <connections>
                                     <action selector="export:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C5Q-7G-v8h"/>
                                 </connections>

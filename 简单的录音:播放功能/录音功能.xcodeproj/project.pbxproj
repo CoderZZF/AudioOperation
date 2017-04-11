@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2B77E2D51E9D2F6800407091 /* XMGAudioFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B77E2D41E9D2F6800407091 /* XMGAudioFileTool.m */; };
+		2B77E2DB1E9D446600407091 /* LameTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B77E2D91E9D446600407091 /* LameTool.m */; };
+		2B77E2DC1E9D446600407091 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B77E2DA1E9D446600407091 /* libmp3lame.a */; };
 		7B9840B81DFA9B6800C4956E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9840B71DFA9B6800C4956E /* main.m */; };
 		7B9840BB1DFA9B6800C4956E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9840BA1DFA9B6800C4956E /* AppDelegate.m */; };
 		7B9840BE1DFA9B6800C4956E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B9840BD1DFA9B6800C4956E /* ViewController.m */; };
@@ -22,6 +24,10 @@
 /* Begin PBXFileReference section */
 		2B77E2D31E9D2F6800407091 /* XMGAudioFileTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGAudioFileTool.h; sourceTree = "<group>"; };
 		2B77E2D41E9D2F6800407091 /* XMGAudioFileTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGAudioFileTool.m; sourceTree = "<group>"; };
+		2B77E2D71E9D446600407091 /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		2B77E2D81E9D446600407091 /* LameTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LameTool.h; sourceTree = "<group>"; };
+		2B77E2D91E9D446600407091 /* LameTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LameTool.m; sourceTree = "<group>"; };
+		2B77E2DA1E9D446600407091 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 		7B9840B31DFA9B6800C4956E /* 录音功能.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "录音功能.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B9840B71DFA9B6800C4956E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7B9840B91DFA9B6800C4956E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -45,12 +51,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B77E2DC1E9D446600407091 /* libmp3lame.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B77E2D61E9D446600407091 /* code */ = {
+			isa = PBXGroup;
+			children = (
+				2B77E2D71E9D446600407091 /* lame.h */,
+				2B77E2D81E9D446600407091 /* LameTool.h */,
+				2B77E2D91E9D446600407091 /* LameTool.m */,
+				2B77E2DA1E9D446600407091 /* libmp3lame.a */,
+			);
+			path = code;
+			sourceTree = "<group>";
+		};
 		7B9840AA1DFA9B6800C4956E = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +114,7 @@
 		7B9840CD1DFA9BBE00C4956E /* XMGRecorder */ = {
 			isa = PBXGroup;
 			children = (
+				2B77E2D61E9D446600407091 /* code */,
 				7B9840D41DFA9C0500C4956E /* Sington.h */,
 				7B9840CE1DFA9BCA00C4956E /* XMGAudioTool.h */,
 				7B9840CF1DFA9BCA00C4956E /* XMGAudioTool.m */,
@@ -180,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B77E2DB1E9D446600407091 /* LameTool.m in Sources */,
 				7B9840BE1DFA9B6800C4956E /* ViewController.m in Sources */,
 				7B9840D21DFA9BCA00C4956E /* XMGAudioTool.m in Sources */,
 				7B9840D31DFA9BCA00C4956E /* XMGMusicTool.m in Sources */,
@@ -307,6 +327,10 @@
 				INFOPLIST_FILE = "录音功能/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/录音功能/XMGRecorder/code",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.520it.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -320,6 +344,10 @@
 				INFOPLIST_FILE = "录音功能/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/录音功能/XMGRecorder/code",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.520it.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
